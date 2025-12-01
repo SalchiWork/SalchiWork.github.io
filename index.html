@@ -3,49 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ==================== -->
-    <!-- SEO ESENCIAL -->
-    <!-- ==================== -->
-    
-    <title>SalchiWork</title>
-    
-    <meta name="description" content="La Mejor Pagina que te Cuida y te mantiene siempre informado.">
-    
-    <meta name="keywords" content="desarrollo web, diseño cyberpunk, programación, L_Adriano, MathiGod, SalchiWork, diseño web">
-    
+    <title>SalchiWork - Proyectos Educativos Cyberpunk</title>
+    <meta name="description" content="Proyectos educativos con diseño cyberpunk: alimentación saludable e ITS. Hecho con amor y neón por L_Adriano">
+    <meta name="keywords" content="SalchiWork, L_Adriano, alimentación saludable, ITS, educación sexual, cyberpunk, diseño web">
     <meta name="author" content="L_Adriano">
 
-    <!-- PREPARADO PARA FUENTES PERSONALIZADAS -->
     <style>
-        /* FUENTE PARA FRASES */
-        @font-face {
-            font-family: 'FrasesPersonalizada';
-            src: url('assets/fonts/frases/Small Cake.otf') format('woff2'),
-                 url('assets/fonts/frases/tu-fuente-frases.woff') format('woff'),
-                 url('assets/fonts/frases/tu-fuente-frases.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
+        @font-face { font-family: 'FrasesPersonalizada'; src: url('assets/fonts/frases/Small Cake.otf') format('opentype'); font-display: swap; }
+        @font-face { font-family: 'NombresPersonalizada'; src: url('assets/fonts/nombre/Jumps Winter.otf') format('opentype'); font-display: swap; }
 
-        /* FUENTE PARA NOMBRES */
-        @font-face {
-            font-family: 'NombresPersonalizada';
-            src: url('assets/fonts/nombre/Jumps Winter.otf') format('woff2'),
-                 url('assets/fonts/nombre/tu-fuente-nombres.woff') format('woff'),
-                 url('assets/fonts/nombre/tu-fuente-nombres.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
             background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e);
             color: white;
@@ -53,7 +20,6 @@
             font-family: 'Segoe UI', sans-serif;
         }
 
-        /* HEADER EPICO */
         .hero {
             height: 100vh;
             display: flex;
@@ -61,22 +27,18 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding-top: 80px;
             position: relative;
             z-index: 1;
-            padding-top: 80px;
         }
-
         .glitch {
             font-size: 8rem;
             font-weight: 900;
             text-transform: uppercase;
-            position: relative;
-            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
-                         0.025em 0.04em 0 #fffc00;
+            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
             animation: glitch 725ms infinite;
-            font-family: 'NombresPersonalizada', 'Segoe UI', sans-serif;
+            font-family: 'NombresPersonalizada', sans-serif;
         }
-
         @keyframes glitch {
             0% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff; }
             15% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff; }
@@ -87,637 +49,212 @@
             100% { text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff; }
         }
 
-        /* ANIMACIÓN MÁQUINA DE ESCRIBIR PRINCIPAL */
-        .typewriter-container {
-            height: 80px;
-            margin: 2rem 0;
-            position: relative;
-        }
+        .typewriter-container { height: 80px; margin: 2rem 0; }
+        .typewriter { font-size: 2rem; letter-spacing: 3px; font-family: 'FrasesPersonalizada', sans-serif; }
+        .typewriter-text { border-right: 3px solid #00fffc; padding-right: 5px; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%,100% { border-color:#00fffc; } 50% { border-color:transparent; } }
 
-        .typewriter {
-            font-size: 2rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            position: relative;
-            display: inline-block;
-            font-family: 'FrasesPersonalizada', 'Segoe UI', sans-serif;
-        }
-
-        .typewriter-text {
-            border-right: 3px solid #00fffc;
-            padding-right: 5px;
-            animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { border-color: #00fffc; }
-            50% { border-color: transparent; }
-        }
-
-        /* BARRA DE NAVEGACIÓN FIJA */
         .nav-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            border-bottom: 2px solid transparent;
+            position: fixed; top:0; left:0; width:100%; background:rgba(0,0,0,0.95); backdrop-filter:blur(15px);
+            z-index:1000; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem;
         }
-
-        /* LINEA RGB DELGADA ABAJO */
         .nav-container::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, 
-                #00fffc, #fc00ff, #fffc00, #00fffc);
-            background-size: 300% 100%;
-            animation: rgbFlow 3s linear infinite;
+            content:''; position:absolute; bottom:0; left:0; width:100%; height:2px;
+            background:linear-gradient(90deg,#00fffc,#fc00ff,#fffc00,#00fffc); background-size:300%; animation:rgbFlow 3s linear infinite;
         }
+        @keyframes rgbFlow { 0%{background-position:0%} 100%{background-position:300%} }
 
-        @keyframes rgbFlow {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 300% 0%; }
-        }
-
-        /* ANIMACIÓN MÁQUINA DE ESCRIBIR PARA NOMBRES */
         .names-typewriter {
-            font-size: 1.2rem;
-            font-weight: bold;
-            background: linear-gradient(90deg, #00fffc, #fc00ff, #fffc00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            display: inline-block;
-            min-width: 120px;
-            font-family: 'NombresPersonalizada', 'Segoe UI', sans-serif;
+            font-size:1.3rem; font-weight:bold; background:linear-gradient(90deg,#00fffc,#fc00ff,#fffc00);
+            -webkit-background-clip:text; background-clip:text; color:transparent; text-transform:uppercase;
+            font-family:'NombresPersonalizada', sans-serif;
         }
+        .names-typewriter-text { border-right:2px solid #00fffc; padding-right:3px; animation:blink 0.7s infinite; }
 
-        .names-typewriter-text {
-            border-right: 2px solid #00fffc;
-            padding-right: 3px;
-            animation: blink 0.7s infinite;
-        }
+        .menu-toggle { background:linear-gradient(45deg,#00fffc,#fc00ff); border:none; cursor:pointer; padding:12px; border-radius:8px; box-shadow:0 0 15px rgba(0,255,252,0.3); transition:all .3s; }
+        .menu-toggle:hover { transform:scale(1.1); }
+        .hamburger span { display:block; height:2px; width:25px; background:white; margin:5px 0; transition:all .4s cubic-bezier(0.68,-0.55,0.265,1.55); }
+        .menu-toggle.active .hamburger span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+        .menu-toggle.active .hamburger span:nth-child(2) { opacity:0; }
+        .menu-toggle.active .hamburger span:nth-child(3) { transform:rotate(-45deg) translate(7px,-6px); }
 
-        /* BOTÓN HAMBURGUESA MEJORADO */
-        .menu-toggle {
-            background: linear-gradient(45deg, #00fffc, #fc00ff);
-            border: none;
-            cursor: pointer;
-            padding: 12px;
-            border-radius: 8px;
-            position: relative;
-            z-index: 1001;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 255, 252, 0.3);
-        }
-
-        .menu-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(0, 255, 252, 0.5);
-        }
-
-        .hamburger {
-            width: 25px;
-            height: 18px;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .hamburger span {
-            display: block;
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: white;
-            border-radius: 2px;
-            left: 0;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-        }
-
-        .hamburger span:nth-child(1) { 
-            top: 0; 
-            transform-origin: left center;
-        }
-        .hamburger span:nth-child(2) { 
-            top: 8px; 
-            transform-origin: left center;
-        }
-        .hamburger span:nth-child(3) { 
-            top: 16px; 
-            transform-origin: left center;
-        }
-
-        /* ESTADO ABIERTO DEL MENÚ */
-        .menu-toggle.active {
-            background: linear-gradient(45deg, #fc00ff, #00fffc);
-            box-shadow: 0 0 30px rgba(252, 0, 255, 0.5);
-        }
-
-        .menu-toggle.active .hamburger span:nth-child(1) {
-            transform: rotate(45deg) scaleX(1.1);
-            top: -1px;
-            left: 3px;
-        }
-
-        .menu-toggle.active .hamburger span:nth-child(2) {
-            width: 0%;
-            opacity: 0;
-        }
-
-        .menu-toggle.active .hamburger span:nth-child(3) {
-            transform: rotate(-45deg) scaleX(1.1);
-            top: 17px;
-            left: 3px;
-        }
-
-        /* MENÚ DESPLEGABLE GLITCH */
         .nav-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 320px;
-            height: 100vh;
-            background: rgba(10, 10, 20, 0.98);
-            backdrop-filter: blur(20px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            border-left: 3px solid;
-            border-image: linear-gradient(180deg, #00fffc, #fc00ff) 1;
-            box-shadow: -15px 0 40px rgba(0, 255, 252, 0.3);
+            position:fixed; top:0; right:-100%; width:320px; height:100vh; background:rgba(10,10,20,0.98);
+            backdrop-filter:blur(20px); display:flex; flex-direction:column; justify-content:center; align-items:center;
+            transition:all .5s cubic-bezier(0.68,-0.55,0.265,1.55); border-left:3px solid; border-image:linear-gradient(#00fffc,#fc00ff) 1;
         }
-
-        .nav-menu.active {
-            right: 0;
-        }
-
+        .nav-menu.active { right:0; }
         .nav-item {
-            padding: 1.5rem 3rem;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            text-align: center;
-            width: 100%;
-            margin: 0.5rem 0;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            font-family: 'NombresPersonalizada', 'Segoe UI', sans-serif;
+            padding:1.5rem 3rem; font-size:1.4rem; text-transform:uppercase; cursor:pointer; width:100%; text-align:center;
+            background:rgba(255,255,255,0.05); border-radius:10px; margin:0.5rem 0; font-family:'NombresPersonalizada', sans-serif;
         }
+        .nav-item:hover { background:rgba(0,255,252,0.15); transform:translateX(-10px); }
 
-        .nav-item:hover {
-            background: rgba(0, 255, 252, 0.15);
-            animation: navGlitch 0.3s infinite;
-            transform: translateX(-10px);
-            box-shadow: 5px 5px 15px rgba(0, 255, 252, 0.2);
-        }
-
-        @keyframes navGlitch {
-            0% { transform: translateX(-10px) translateY(0); }
-            25% { transform: translateX(-12px) translateY(-1px); }
-            50% { transform: translateX(-8px) translateY(1px); }
-            75% { transform: translateX(-12px) translateY(-1px); }
-            100% { transform: translateX(-10px) translateY(0); }
-        }
-
-        .nav-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: linear-gradient(180deg, #00fffc, #fc00ff);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-            border-radius: 10px 0 0 10px;
-        }
-
-        .nav-item:hover::before {
-            transform: scaleY(1);
-        }
-
-        /* OVERLAY PARA CERRAR MENÚ */
         .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
+            position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(10px);
+            z-index:998; opacity:0; visibility:hidden; transition:all .4s;
         }
+        .menu-overlay.active { opacity:1; visibility:visible; }
 
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* SECCIONES 3D */
-        .section {
-            padding: 8rem 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            z-index: 2;
-            background: inherit;
-        }
-
+        .section { padding:8rem 2rem; text-align:center; }
         .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-            font-family: 'NombresPersonalizada', 'Segoe UI', sans-serif;
+            font-size:3.5rem; margin-bottom:4rem; font-family:'NombresPersonalizada', sans-serif; color:#00fffc;
+            position:relative;
         }
-
         .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, #00fffc, #fc00ff);
+            content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%);
+            width:120px; height:4px; background:linear-gradient(90deg,#00fffc,#fc00ff);
         }
 
-        /* CARDS NEON */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
+        .catalog-grid {
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(380px, 1fr)); gap:3rem; padding:2rem; max-width:1400px; margin:0 auto;
+        }
+        .catalog-card {
+            background:rgba(255,255,255,0.05); border-radius:20px; overflow:hidden; cursor:pointer;
+            transition:all .4s; border:2px solid transparent; position:relative;
+        }
+        .catalog-card:hover {
+            transform:translateY(-15px) scale(1.03);
+            border:2px solid #00fffc;
+            box-shadow:0 20px 50px rgba(0,255,252,0.4);
+        }
+        .catalog-image {
+            width:100%; height:280px; object-fit:cover; transition:all .4s;
+        }
+        .catalog-card:hover .catalog-image { transform:scale(1.08); }
+        .catalog-content {
+            padding:2rem; text-align:center;
+        }
+        .catalog-content h3 {
+            font-family:'NombresPersonalizada', sans-serif; font-size:2rem; margin-bottom:1rem; color:#00fffc;
+        }
+        .catalog-content p {
+            font-family:'FrasesPersonalizada', sans-serif; font-size:1.1rem; opacity:0.9;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card h3 {
-            font-family: 'NombresPersonalizada', 'Segoe UI', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            font-family: 'FrasesPersonalizada', 'Segoe UI', sans-serif;
-            line-height: 1.6;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: 0.5s;
-        }
-
-        .card:hover::before {
-            left: 100%;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border: 1px solid #00fffc;
-            box-shadow: 0 10px 30px rgba(0, 255, 252, 0.3);
-        }
-
-        /* BOTONES CYBERPUNK */
         .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            background: linear-gradient(45deg, #00fffc, #fc00ff);
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 10;
-            font-family: 'NombresPersonalizada', 'Segoe UI', sans-serif;
+            margin-top: 3rem;
+            padding:1.2rem 3rem;
+            background:linear-gradient(45deg,#00fffc,#fc00ff);
+            border:none; border-radius:50px; color:white; font-weight:bold; text-transform:uppercase;
+            font-family:'NombresPersonalizada', sans-serif; cursor:pointer; transition:all .3s;
         }
+        .btn:hover { transform:scale(1.1); box-shadow:0 0 30px rgba(0,255,252,0.6); }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-        }
+        .particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; }
+        .particle { position:absolute; width:2px; height:2px; background:#00fffc; animation:float 7s infinite linear; }
+        @keyframes float { 0%{transform:translateY(100vh) rotate(0deg);opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{transform:translateY(-100vh) rotate(360deg);opacity:0} }
 
-        .btn:hover::before {
-            left: 100%;
-        }
+        .footer { background:rgba(0,0,0,0.9); padding:4rem 2rem; text-align:center; font-family:'FrasesPersonalizada', sans-serif; }
+        .footer::before { content:''; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,#00fffc,#fc00ff,#00fffc); background-size:300%; animation:rgbFlow 3s linear infinite; }
 
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(0, 255, 252, 0.5);
-        }
-
-        /* ANIMACIONES DE PARTICULAS */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #00fffc;
-            animation: float 6s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* FOOTER ESPACIAL */
-        .footer {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 3rem 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer p {
-            font-family: 'FrasesPersonalizada', 'Segoe UI', sans-serif;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #00fffc, #fc00ff, #00fffc);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .glitch { font-size: 4rem; }
-            .typewriter { font-size: 1.5rem; }
-            .typewriter-container { height: 60px; }
-            .nav-menu { width: 280px; }
-            .names-typewriter { font-size: 1rem; min-width: 100px; }
-            .hero { padding-top: 70px; }
-            .section-title { font-size: 2.5rem; }
+        @media (max-width:768px) {
+            .glitch { font-size:4.5rem; }
+            .catalog-grid { grid-template-columns:1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- PARTICULAS BACKGROUND -->
-    <div class="particles" id="particles"></div>
 
-    <!-- OVERLAY PARA CERRAR MENÚ -->
+    <div class="particles" id="particles"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- NAVEGACIÓN HAMBURGUESA -->
-    <div class="nav-container" id="navContainer">
-        <!-- ANIMACIÓN MÁQUINA DE ESCRIBIR PARA NOMBRES -->
-        <div class="names-typewriter">
-            <span class="names-typewriter-text" id="namesTypewriter"></span>
-        </div>
-        
-        <!-- BOTÓN HAMBURGUESA -->
+    <div class="nav-container">
+        <div class="names-typewriter"><span class="names-typewriter-text" id="namesTypewriter"></span></div>
         <button class="menu-toggle" id="menuToggle">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
         </button>
-        
-        <!-- MENÚ DESPLEGABLE -->
         <nav class="nav-menu" id="navMenu">
-            <div class="nav-item" data-section="inicio">🚀 Inicio</div>
-            <div class="nav-item" data-section="proyectos">🌌 Proyectos</div>
-            <div class="nav-item" data-section="team">❤️ Rikolino</div>
+            <div class="nav-item" onclick="location.href='index.html'">Inicio</div>
+            <div class="nav-item" onclick="location.href='alimentacion.html'">Tu Plato, Tu Salud</div>
+            <div class="nav-item" onclick="location.href='its.html'">Amar con Cabeza</div>
         </nav>
     </div>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <h1 class="glitch">SALCHIWORK</h1>
-        
-        <!-- CONTENEDOR ANIMACIÓN MÁQUINA DE ESCRIBIR -->
         <div class="typewriter-container">
-            <div class="typewriter">
-                <span class="typewriter-text" id="typewriter"></span>
-            </div>
+            <div class="typewriter"><span class="typewriter-text" id="typewriter"></span></div>
         </div>
-
-        <button class="btn">Empezar</button>
+        <button class="btn" onclick="document.querySelector('.section').scrollIntoView({behavior:'smooth'})">Explorar Proyectos</button>
     </section>
 
-    <!-- SERVICIOS -->
     <section class="section">
-        <h2 class="section-title">Que buscamos?</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Dar a conocer</h3>
-                <p>me da flojera tego que hacer otra pagina xd</p>
-            </div>
-            <div class="card">
-                <h3>Anime</h3>
-                <p>ke vivan japon y sus animes.</p>
-            </div>
-            <div class="card">
-                <h3>ya se puse cosas o pendejadas</h3>
-                <p>lo hare en un rato pses sus teams y los edito .</p>
-            </div>
+        <h2 class="section-title">Proyectos Educativos con Neón</h2>
+        <div class="catalog-grid">
+
+            <!-- ALIMENTACIÓN -->
+            <a href="alimentacion.html" class="catalog-card">
+                <img src="assets/imagenes/alimentacion-preview.jpg" alt="Tu Plato, Tu Salud" class="catalog-image">
+                <div class="catalog-content">
+                    <h3>Tu Plato, Tu Salud</h3>
+                    <p></p>
+                </div>
+            </a>
+
+            <!-- ITS -->
+            <a href="its.html" class="catalog-card">
+                <img src="assets/imagenes/its-preview.jpg" alt="Amar con Cabeza" class="catalog-image">
+                <div class="catalog-content">
+                    <h3>Amar con Cabeza</h3>
+                    <p></p>
+                </div>
+            </a>
+
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 SalchiWork</p>
-        <p>Vamos por mas dijo vladimir xD</p>
+        <p>© 2025 SalchiWork — Hecho con amor, café y neón por L_Adriano</p>
+        <p>Vamos por más, dijo Vladimir</p>
     </footer>
 
     <script>
-        // ANIMACIÓN MÁQUINA DE ESCRIBIR PRINCIPAL
         class TypeWriter {
-            constructor(element, phrases, typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000) {
-                this.element = element;
-                this.phrases = phrases;
-                this.typingSpeed = typingSpeed;
-                this.deletingSpeed = deletingSpeed;
-                this.pauseTime = pauseTime;
-                this.currentPhraseIndex = 0;
-                this.currentCharIndex = 0;
-                this.isDeleting = false;
-                this.type();
+            constructor(el, phrases, speed=90, del=40, pause=2000) {
+                this.el = el; this.phrases = phrases; this.speed = speed;
+                this.del = del; this.pause = pause; this.i = 0; this.j = 0;
+                this.deleting = false; this.type();
             }
-
             type() {
-                const currentPhrase = this.phrases[this.currentPhraseIndex];
-                
-                if (this.isDeleting) {
-                    this.currentCharIndex--;
-                    this.element.textContent = currentPhrase.substring(0, this.currentCharIndex);
-                } else {
-                    this.currentCharIndex++;
-                    this.element.textContent = currentPhrase.substring(0, this.currentCharIndex);
-                }
-
-                let typeSpeed = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
-
-                if (!this.isDeleting && this.currentCharIndex === currentPhrase.length) {
-                    typeSpeed = this.pauseTime;
-                    this.isDeleting = true;
-                } else if (this.isDeleting && this.currentCharIndex === 0) {
-                    this.isDeleting = false;
-                    this.currentPhraseIndex = (this.currentPhraseIndex + 1) % this.phrases.length;
-                    typeSpeed = 500;
-                }
-
-                setTimeout(() => this.type(), typeSpeed);
+                const full = this.phrases[this.i];
+                this.el.textContent = this.deleting ? full.substring(0, this.j--) : full.substring(0, this.j++);
+                if (!this.deleting && this.j === full.length) setTimeout(() => this.deleting = true, this.pause);
+                else if (this.deleting && this.j === 0) { this.deleting = false; this.i = (this.i + 1) % this.phrases.length; }
+                setTimeout(() => this.type(), this.deleting ? this.del : this.speed);
             }
         }
 
-        // FRASES PARA LA ANIMACIÓN PRINCIPAL
-        const phrases = [
-            "Ke vivas las gatitas xD",
-            "no se que poner", 
-            "tenfo sueño ahhh",
-            "que sera de mi ida en el futuro",
-            "pero bueno lo que dios y quiera",
-            "o yo hago mi futuro quien sabes "
-        ];
+        const heroTexts = ["Educación con estilo cyberpunk...", "Tu salud importa...", "Conocimiento nunca está de más...", "Hecho con amor y neón"];
+        const navNames = ["SalchiWork", "L_Adriano", "CyberEdu"];
 
-        // NOMBRES PARA LA ANIMACIÓN DE LA BARRA
-        const names = [
-            "L_Adriano",
-            "MathiGod", 
-            "SalchiWork"
-        ];
-
-        // GENERADOR DE PARTICULAS
         function createParticles() {
-            const particles = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + 'vw';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (3 + Math.random() * 3) + 's';
-                particles.appendChild(particle);
+            if (window.innerWidth <= 768) return;
+            const p = document.getElementById('particles');
+            for(let i=0; i<50; i++){
+                const div = document.createElement('div');
+                div.className = 'particle';
+                div.style.left = Math.random()*100 + 'vw';
+                div.style.animationDelay = Math.random()*7 + 's';
+                p.appendChild(div);
             }
         }
 
-        // TOGGLE MENÚ HAMBURGUESA
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
+        document.getElementById('menuToggle').onclick = () => {
+            document.getElementById('menuToggle').classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+            document.getElementById('menuOverlay').classList.toggle('active');
+        };
+        document.getElementById('menuOverlay').onclick = () => {
+            document.getElementById('menuToggle').classList.remove('active');
+            document.getElementById('navMenu').classList.remove('active');
+            document.getElementById('menuOverlay').classList.remove('active');
+        };
 
-        function toggleMenu() {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            
-            if (navMenu.classList.contains('active')) {
-                document.querySelectorAll('.nav-item').forEach((item, index) => {
-                    item.style.animationDelay = `${index * 0.1}s`;
-                });
-            }
-        }
-
-        menuToggle.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
-
-        // CERRAR MENÚ AL CLICK EN ITEM
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const section = this.getAttribute('data-section');
-                toggleMenu();
-                
-                this.style.animation = 'navGlitch 0.5s infinite';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 500);
-                
-                alert(`Navegando a ${section.toUpperCase()} - ¡Con estilo glitch!`);
-            });
-        });
-
-        // EFECTO PARALLAX
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const heroHeight = hero.offsetHeight;
-            
-            if (scrolled < heroHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            } else {
-                hero.style.transform = `translateY(${heroHeight * 0.5}px)`;
-            }
-        });
-
-        // BOTÓN EXPLORAR
-        document.querySelector('.btn').addEventListener('click', function() {
-            document.querySelector('.section').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        });
-
-        // INICIAR
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             createParticles();
-            
-            // INICIAR ANIMACIÓN MÁQUINA DE ESCRIBIR PRINCIPAL
-            const typewriterElement = document.getElementById('typewriter');
-            new TypeWriter(typewriterElement, phrases, 80, 40, 1500);
-            
-            // INICIAR ANIMACIÓN MÁQUINA DE ESCRIBIR PARA NOMBRES
-            const namesTypewriterElement = document.getElementById('namesTypewriter');
-            new TypeWriter(namesTypewriterElement, names, 120, 60, 1000);
+            new TypeWriter(document.getElementById('typewriter'), heroTexts);
+            new TypeWriter(document.getElementById('namesTypewriter'), navNames, 120, 60, 1500);
         });
     </script>
 </body>
