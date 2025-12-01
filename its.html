@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amar con Cabeza: Conociendo las ITS</title>
+    <meta name="description" content="Guía completa sobre Infecciones de Transmisión Sexual (ITS): prevención, condón, pruebas periódicas y más.">
+    <meta name="keywords" content="ITS, infecciones transmisión sexual, condón, prevención, salud sexual, VIH">
+    <meta name="author" content="L_Adriano">
+
+    <style>
+        @font-face {
+            font-family: 'FrasesPersonalizada';
+            src: url('assets/fonts/frases/Lunea Sans.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NombresPersonalizada';
+            src: url('assets/fonts/nombre/Jumps Winter.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e);
+            color: white;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding-top: 80px;
+        }
+        .glitch {
+            font-size: 6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                         0.025em 0.04em 0 #fffc00;
+            animation: glitch 725ms infinite;
+            font-family: 'NombresPersonalizada', sans-serif;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            font-size: 2rem;
+            color: #00fffc;
+            font-family: 'FrasesPersonalizada', sans-serif;
+            margin-bottom: 2rem;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff; }
+            15% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff; }
+            16% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff; }
+            49% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff; }
+            50% { text-shadow: 0.05em 0.05em 0 #00fffc, 0em 0em 0 #fc00ff; }
+            99% { text-shadow: 0.05em 0.05em 0 #00fffc, 0em 0em 0 #fc00ff; }
+            100% { text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff; }
+        }
+
+        .typewriter-container { height: 80px; margin: 2rem 0; position: relative; }
+        .typewriter { font-size: 1.8rem; opacity: 0.9; letter-spacing: 2px; font-family: 'FrasesPersonalizada', sans-serif; }
+        .typewriter-text { border-right: 3px solid #00fffc; padding-right: 5px; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%,100% { border-color:#00fffc; } 50% { border-color:transparent; } }
+
+        .nav-container {
+            position: fixed; top:0; left:0; width:100%;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
+            z-index: 1000; display: flex; justify-content: space-between;
+            align-items: center; padding: 1rem 2rem;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-container::after {
+            content:''; position:absolute; bottom:0; left:0; width:100%; height:2px;
+            background: linear-gradient(90deg, #00fffc, #fc00ff, #fffc00, #00fffc);
+            background-size: 300% 100%; animation: rgbFlow 3s linear infinite;
+        }
+        @keyframes rgbFlow { 0% { background-position:0% 0%; } 100% { background-position:300% 0%; } }
+
+        .names-typewriter {
+            font-size: 1.2rem; font-weight: bold;
+            background: linear-gradient(90deg, #00fffc, #fc00ff, #fffc00);
+            -webkit-background-clip: text; background-clip: text;
+            color: transparent; text-transform: uppercase;
+            letter-spacing: 2px; font-family: 'NombresPersonalizada', sans-serif;
+        }
+        .names-typewriter-text { border-right: 2px solid #00fffc; padding-right: 3px; animation: blink 0.7s infinite; }
+
+        .menu-toggle { background: linear-gradient(45deg, #00fffc, #fc00ff); border:none; cursor:pointer;
+            padding:12px; border-radius:8px; box-shadow:0 0 15px rgba(0,255,252,0.3); transition:all .3s; }
+        .menu-toggle:hover { transform:scale(1.1); box-shadow:0 0 25px rgba(0,255,252,0.5); }
+        .hamburger { width:25px; height:18px; position:relative; }
+        .hamburger span { display:block; position:absolute; height:2px; width:100%; background:white;
+            border-radius:2px; transition:all .4s cubic-bezier(0.68,-0.55,0.265,1.55); }
+        .hamburger span:nth-child(1){top:0;} .hamburger span:nth-child(2){top:8px;} .hamburger span:nth-child(3){top:16px;}
+        .menu-toggle.active .hamburger span:nth-child(1){ transform:rotate(45deg) scaleX(1.1); top:-1px; left:3px; }
+        .menu-toggle.active .hamburger span:nth-child(2){ width:0%; opacity:0; }
+        .menu-toggle.active .hamburger span:nth-child(3){ transform:rotate(-45deg) scaleX(1.1); top:17px; left:3px; }
+
+        .nav-menu {
+            position:fixed; top:0; right:-100%; width:320px; height:100vh;
+            background:rgba(10,10,20,0.98); backdrop-filter:blur(20px);
+            display:flex; flex-direction:column; justify-content:center; align-items:center;
+            transition:all .5s cubic-bezier(0.68,-0.55,0.265,1.55);
+            border-left:3px solid; border-image:linear-gradient(#00fffc,#fc00ff) 1;
+        }
+        .nav-menu.active { right:0; }
+        .nav-item {
+            padding:1.5rem 3rem; font-size:1.4rem; text-transform:uppercase;
+            cursor:pointer; width:100%; text-align:center; background:rgba(255,255,255,0.05);
+            border-radius:10px; margin:0.5rem 0; font-family:'NombresPersonalizada', sans-serif;
+        }
+        .nav-item:hover { background:rgba(0,255,252,0.15); animation:navGlitch .3s infinite; transform:translateX(-10px); }
+        @keyframes navGlitch { 0%,100%{transform:translateX(-10px)} 25%{transform:translateX(-12px) translateY(-1px)} 50%{transform:translateX(-8px) translateY(1px)} }
+
+        .menu-overlay {
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.7); backdrop-filter:blur(10px);
+            z-index:998; opacity:0; visibility:hidden; transition:all .4s;
+        }
+        .menu-overlay.active { opacity:1; visibility:visible; }
+
+        .section { padding:6rem 2rem; border-bottom:1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            font-size:3rem; text-align:center; margin-bottom:3rem;
+            font-family:'NombresPersonalizada', sans-serif; color:#00fffc; position:relative;
+        }
+        .section-title::after {
+            content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%);
+            width:100px; height:3px; background:linear-gradient(90deg,#00fffc,#fc00ff);
+        }
+
+        .card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:2rem; padding:2rem; }
+        .card {
+            background:rgba(255,255,255,0.05); border-radius:15px; padding:2rem;
+            transition:all .3s; border:1px solid transparent; position:relative; overflow:hidden;
+        }
+        .card::before {
+            content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+            background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);
+            transition:.5s;
+        }
+        .card:hover::before { left:100%; }
+        .card:hover { transform:translateY(-10px); border:1px solid #00fffc; box-shadow:0 10px 30px rgba(0,255,252,0.3); }
+        .card h3 { font-family:'NombresPersonalizada', sans-serif; font-size:1.5rem; margin-bottom:1rem; color:#00fffc; }
+        .card p, .card li { font-family:'FrasesPersonalizada', sans-serif; line-height:1.7; margin-bottom:0.8rem; }
+
+        .btn {
+            padding:1rem 2.5rem; border:none; border-radius:50px;
+            background:linear-gradient(45deg,#00fffc,#fc00ff); color:white;
+            font-weight:bold; text-transform:uppercase; cursor:pointer;
+            font-family:'NombresPersonalizada', sans-serif; transition:all .3s;
+            position:relative; overflow:hidden; margin:2rem auto; display:inline-block;
+        }
+        .btn:hover { transform:scale(1.05); box-shadow:0 5px 20px rgba(0,255,252,0.5); }
+
+        .particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; }
+        .particle { position:absolute; width:2px; height:2px; background:#00fffc;
+            animation:float 6s infinite linear; }
+        @keyframes float { 0%{transform:translateY(100vh) rotate(0deg);opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{transform:translateY(-100vh) rotate(360deg);opacity:0} }
+
+        .footer { background:rgba(0,0,0,0.9); padding:3rem 2rem; text-align:center; position:relative; }
+        .footer::before { content:''; position:absolute; top:0; left:0; width:100%; height:2px;
+            background:linear-gradient(90deg,#00fffc,#fc00ff,#00fffc); background-size:300%; animation:rgbFlow 3s linear infinite; }
+
+        @media (max-width:768px) {
+            .glitch { font-size:3.5rem; }
+            .subtitle { font-size:1.5rem; }
+            .typewriter { font-size:1.3rem; }
+            .card-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="particles" id="particles"></div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="nav-container">
+        <div class="names-typewriter"><span class="names-typewriter-text" id="namesTypewriter"></span></div>
+        <button class="menu-toggle" id="menuToggle">
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <div class="nav-item" data-section="concepto">Concepto</div>
+            <div class="nav-item" data-section="importancia">Importancia</div>
+            <div class="nav-item" data-section="prevencion">Prevención</div>
+            <div class="nav-item" data-section="preguntas">Preguntas</div>
+        </nav>
+    </div>
+
+    <section class="hero">
+        <h1 class="glitch">AMAR CON CABEZA</h1>
+        <div class="subtitle">Conociendo las ITS</div>
+        <div class="typewriter-container">
+            <div class="typewriter"><span class="typewriter-text" id="typewriter"></span></div>
+        </div>
+        <button class="btn">Protegerse es Poder</button>
+    </section>
+
+    <!-- CONCEPTO -->
+    <section class="section" id="concepto">
+        <h2 class="section-title">Concepto</h2>
+        <div class="card">
+            <p>Las Infecciones de Transmisión Sexual (ITS) son un conjunto de enfermedades que se transmiten principalmente mediante el contacto sexual sin protección, ya sea vaginal, anal u oral. Están causadas por diversos agentes infecciosos como virus, bacterias, hongos o parásitos, que ingresan al organismo y se alojan principalmente en la zona genital, el recto, la boca o la sangre.</p>
+            <p>Una característica importante del concepto de ITS es que no siempre presentan síntomas, por lo que una persona puede tener una infección y transmitirla sin saberlo. Debido a esto, se consideran un problema de salud pública que requiere educación, prevención y diagnóstico temprano.</p>
+            <p>Estas infecciones no solo se transmiten por actividad sexual, también pueden contagiarse a través del intercambio de fluidos corporales, sangre contaminada, agujas compartidas o de madre a hijo durante el embarazo y el parto.</p>
+            <p><strong>FUENTES:</strong> Organización mundial de la salud (OMS)</p>
+        </div>
+    </section>
+
+    <!-- IMPORTANCIA -->
+    <section class="section" id="importancia">
+        <h2 class="section-title">Importancia de la Prevención de las ITS</h2>
+        <div class="card">
+            <h3>¿POR QUÉ ES IMPORTANTE?</h3>
+            <p>Porque protege la salud (mental y física) individual y pública</p>
+            <h3>Beneficios</h3>
+            <ul>
+                <li>La prevención evita el desarrollo de patologías complejas y crónicas, que pueden terminas en cáncer, infertilidad y daños permanentes en órganos; si uno no toma las debidas precauciones sufriremos de graves consecuencias a largo plazo por no analizar e identificar la situación de riesgo en las que podemos exponernos.</li>
+                <li>Al prevenir una ITS, se detiene su propagación a otros, protegiendo así la salud de las parejas y la comunidad, de esta manera evitamos posibles propagaciones masivas si no nos cuidamos</li>
+                <li>Algunas ITS pueden afectar gravemente la salud del recién nacido si se transmiten durante el embarazo o el parto, un ejemplo es si la madre tiene lesiones activas de herpes genital en el momento del parto, el virus puede pasar al bebé al atravesar el canal de parto.</li>
+                <li>Mantenerse libre de ITS contribuye a un estado de bienestar físico, mental y social en relación con la sexualidad por que esta da seguridad a las personas en la relación, lo que permite vivir la sexualidad con confianza, responsabilidad y respeto</li>
+                <li>Reduce indirectamente el riesgo de contraer o transmitir el VIH un ejemplo es realizarse pruebas para detectar infecciones a tiempo y evitar la transmisión sin saberlo.</li>
+            </ul>
+            <p><strong>Fuentes:</strong><br>1. Organización Mundial de la Salud (OMS)<br>2. Organización Panamericana de la Salud (OPS)<br>3. Clínica Mayo</p>
+        </div>
+    </section>
+
+    <!-- PREVENCIÓN -->
+    <section class="section" id="prevencion">
+        <h2 class="section-title">Métodos de Prevención</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Uso del condón</h3>
+                <p>El condón es importante porque actúa como una barrera que evita el contacto con fluidos que pueden transmitir ITS y también ayuda a prevenir embarazos no planificados. Su uso correcto reduce mucho el riesgo de contagio.</p>
+                <p><strong>Ejemplo:</strong><br>Si una pareja tiene relaciones sin condón y uno tiene ITS sin saberlo, los fluidos pueden contagiar al otro. En cambio, usando el condón desde el inicio hasta el final, ese contacto no ocurre y el riesgo disminuye.</p>
+            </div>
+            <div class="card">
+                <h3>Formas de transmisión (sexual sin condón)</h3>
+                <p>Las ITS se transmiten principalmente cuando hay relaciones sexuales sin condón, ya sean vaginales, anales u orales, porque ocurre un contacto directo con fluidos como semen, flujo vaginal o sangre que pueden contener la infección.</p>
+                <p><strong>Ejemplo:</strong><br>Si una persona tiene sexo vaginal o anal sin condón con alguien que tiene una ITS, los fluidos pueden pasar directamente y contagiarla, incluso si no hay síntomas visibles</p>
+            </div>
+            <div class="card">
+                <h3>Métodos de prevención (uso correcto del preservativo)</h3>
+                <p>El uso correcto del preservativo es uno de los métodos más efectivos para prevenir ITS, porque crea una barrera que evita el contacto con fluidos que pueden transmitir infecciones. Debe colocarse desde el inicio de la relación sexual hasta el final de la relación sexual y usarse solo una vez.</p>
+                <p><strong>Ejemplo:</strong><br>Si una persona revisa la fecha, se coloca el condón antes de empezar y lo retira adecuadamente, reduce casi por completo el riesgo de contagio. En cambio, si lo coloca a la mitad del acto, ya hubo exposición y el riesgo aumenta.</p>
+            </div>
+            <div class="card">
+                <h3>Pruebas periódicas</h3>
+                <p>Las pruebas periódicas de ITS permiten detectar infecciones a tiempo, incluso cuando no hay síntomas. Esto ayuda a iniciar tratamiento temprano y evitar contagiar a otras personas sin saberlo.</p>
+                <p><strong>Ejemplo:</strong><br>Una persona puede tener clamidia o sífilis sin presentar molestias; al hacerse una prueba anual, la infección se detecta y se trata antes de que avance o se siga transmitiendo.</p>
+            </div>
+            <div class="card">
+                <h3>Postergar el inicio de relaciones sexuales</h3>
+                <p>Postergar el inicio sexual ayuda a reducir riesgos porque permite tener mayor madurez para decidir, usar protección correctamente y evitar exposiciones tempranas a ITS.</p>
+                <p><strong>Ejemplo:</strong><br>Un adolescente que espera tiene más tiempo para informarse y está menos expuesto a situaciones sin protección.</p>
+            </div>
+            <div class="card">
+                <h3>Importancia del tratamiento completo</h3>
+                <p>Completar el tratamiento de una ITS es esencial para eliminar completamente la infección y evitar complicaciones o contagios a otras personas.</p>
+                <p><strong>Ejemplo:</strong><br>Si una persona deja el tratamiento de sífilis o gonorrea a la mitad, la infección puede volver más fuerte y seguir contagiando a su pareja.</p>
+                <p><strong>FUENTES:</strong><br>Organización mundial de la salud (OMS)<br>La Centers for Disease Control and Prevention (CDC)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="section" id="preguntas">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>1. ¿Por qué es importante prevenir las ITS?</h3>
+                <p>Es importante porque protege la salud individual y pública, evitando enfermedades graves como infertilidad, daños en órganos o complicaciones en el embarazo.</p>
+            </div>
+            <div class="card">
+                <h3>2. ¿Cómo puede transmitirse una ITS durante el parto?</h3>
+                <p>Puede transmitirse cuando el bebé pasa por el canal de parto y entra en contacto con virus o bacterias si la madre no recibió tratamiento adecuado.</p>
+            </div>
+            <div class="card">
+                <h3>3. ¿Qué beneficios trae la prevención de las ITS?</h3>
+                <p>La prevención evita enfermedades crónicas, detiene la propagación de infecciones y contribuye al bienestar físico, mental y social.</p>
+            </div>
+            <div class="card">
+                <h3>4. ¿Qué se entiende por “estado de libertad en las relaciones gracias a la protección”?</h3>
+                <p>Significa que al usar protección se reduce el riesgo de contagios, permitiendo vivir la sexualidad con más seguridad, tranquilidad y responsabilidad.</p>
+            </div>
+            <div class="card">
+                <h3>5. ¿Cuáles son algunas medidas para prevenir el VIH?</h3>
+                <p>Algunas medidas son: usar preservativo, realizarse pruebas, no compartir objetos punzantes y que las personas con VIH sigan su tratamiento para mantener el virus controlado.</p>
+            </div>
+            <div class="card">
+                <h3>6. ¿Cómo afecta una ITS al recién nacido durante el embarazo o el parto?</h3>
+                <p>Puede causar infecciones graves, problemas respiratorios, afectación ocular u otras complicaciones si no se detecta y se trata a tiempo</p>
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <a href="its.html" class="btn">Descargar Guía Completa</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Desarrollado con fines educativos ❤️</p>
+    </footer>
+
+    <script>
+        class TypeWriter {
+            constructor(el, phrases, speed=100, del=50, pause=2000) {
+                this.el = el; this.phrases = phrases; this.speed = speed;
+                this.del = del; this.pause = pause; this.i = 0; this.j = 0;
+                this.deleting = false; this.type();
+            }
+            type() {
+                const full = this.phrases[this.i];
+                this.el.textContent = this.deleting ? full.substring(0, this.j--) : full.substring(0, this.j++);
+                if (!this.deleting && this.j === full.length) { setTimeout(() => this.deleting = true, this.pause); }
+                else if (this.deleting && this.j === 0) { this.deleting = false; this.i = (this.i + 1) % this.phrases.length; }
+                setTimeout(() => this.type(), this.deleting ? this.del : this.speed);
+            }
+        }
+
+        const heroPhrases = ["Amar con cabeza es sexy...", "El condón es tu superpoder...", "Protegerse nunca pasa de moda...", "Tú decides, tú te cuidas..."];
+        const navPhrases = ["Amar con Cabeza", "Conociendo las ITS", "Salud Sexual"];
+
+        function createParticles() {
+            if (window.innerWidth <= 768) return;
+            const p = document.getElementById('particles');
+            for(let i=0; i<45; i++){
+                const div = document.createElement('div');
+                div.className = 'particle';
+                div.style.left = Math.random()*100 + 'vw';
+                div.style.animationDelay = Math.random()*6 + 's';
+                div.style.animationDuration = (4 + Math.random()*4) + 's';
+                p.appendChild(div);
+            }
+        }
+
+        const toggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('navMenu');
+        const overlay = document.getElementById('menuOverlay');
+        toggle.onclick = () => { toggle.classList.toggle('active'); menu.classList.toggle('active'); overlay.classList.toggle('active'); };
+        overlay.onclick = () => { toggle.classList.remove('active'); menu.classList.remove('active'); overlay.classList.remove('active'); };
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.onclick = () => {
+                document.getElementById(item.dataset.section).scrollIntoView({behavior:'smooth'});
+                toggle.classList.remove('active'); menu.classList.remove('active'); overlay.classList.remove('active');
+            };
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            new TypeWriter(document.getElementById('typewriter'), heroPhrases, 90, 40, 2200);
+            new TypeWriter(document.getElementById('namesTypewriter'), navPhrases, 120, 60, 1800);
+        });
+    </script>
+</body>
+</html>
