@@ -175,11 +175,41 @@
         .footer::before { content:''; position:absolute; top:0; left:0; width:100%; height:2px;
             background:linear-gradient(90deg,#00fffc,#fc00ff,#00fffc); background-size:300%; animation:rgbFlow 3s linear infinite; }
 
+        /* Estilos para el afiche */
+        .afiche-container {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+        }
+        
+        .afiche-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #00fffc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 255, 252, 0.3);
+        }
+        
+        .afiche-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(0, 255, 252, 0.5);
+        }
+        
+        .afiche-caption {
+            color: #00fffc;
+            font-family: 'FrasesPersonalizada', sans-serif;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
         @media (max-width:768px) {
             .glitch { font-size:3.5rem; }
             .subtitle { font-size:1.5rem; }
             .typewriter { font-size:1.3rem; }
             .card-grid { grid-template-columns:1fr; }
+            .afiche-container { padding: 1rem; }
         }
     </style>
 </head>
@@ -198,6 +228,7 @@
             <div class="nav-item" data-section="importancia">Importancia</div>
             <div class="nav-item" data-section="prevencion">Prevención</div>
             <div class="nav-item" data-section="preguntas">Preguntas</div>
+            <div class="nav-item" data-section="ayuda">Ayuda en Perú</div>
         </nav>
     </div>
 
@@ -294,7 +325,7 @@
                 <p>La prevención evita enfermedades crónicas, detiene la propagación de infecciones y contribuye al bienestar físico, mental y social.</p>
             </div>
             <div class="card">
-                <h3>4. ¿Qué se entiende por “estado de libertad en las relaciones gracias a la protección”?</h3>
+                <h3>4. ¿Qué se entiende por "estado de libertad en las relaciones gracias a la protección"?</h3>
                 <p>Significa que al usar protección se reduce el riesgo de contagios, permitiendo vivir la sexualidad con más seguridad, tranquilidad y responsabilidad.</p>
             </div>
             <div class="card">
@@ -308,6 +339,35 @@
         </div>
         <div style="text-align:center;">
             <a href="its.html" class="btn">Descargar Guía Completa</a>
+        </div>
+    </section>
+
+    <!-- DÓNDE HACERSE PRUEBAS / BUSCAR AYUDA EN PERÚ -->
+    <section class="section" id="ayuda">
+        <h2 class="section-title">Dónde hacerse pruebas / buscar ayuda en Perú</h2>
+        <div class="card">
+            <p>En el Perú puedes hacerte pruebas de ITS o buscar ayuda en cualquier centro de salud u hospital del Minsa, donde suelen ser gratuitas o muy económicas. También puedes llamar al 113 para que te indiquen el lugar más cercano. Las DIRIS y DIRESA de cada región realizan pruebas rápidas de VIH y sífilis. Si tienes ESSALUD, puedes pedirlas mediante consulta médica. Además, ONGs como AHF Perú e INPPARES ofrecen pruebas, consejería y campañas. Si hubiera una urgencia, el SAMU atiende al 106.</p>
+            <div style="margin-top: 2rem;">
+                <h3 style="color: #00fffc;">Resumen de opciones:</h3>
+                <ul>
+                    <li><strong>Centros de salud y hospitales del Minsa:</strong> Pruebas gratuitas o económicas</li>
+                    <li><strong>Línea 113:</strong> Información y orientación sobre centros cercanos</li>
+                    <li><strong>DIRIS/DIRESA:</strong> Pruebas rápidas de VIH y sífilis</li>
+                    <li><strong>ESSALUD:</strong> Mediante consulta médica</li>
+                    <li><strong>ONGs:</strong> AHF Perú, INPPARES (pruebas, consejería, campañas)</li>
+                    <li><strong>Urgencias:</strong> SAMU al 106</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Afiche -->
+        <div class="afiche-container">
+            <p class="afiche-caption">Afiche informativo sobre ITS</p>
+            <img src="assets/afiche.png" 
+                 alt="Afiche informativo sobre ITS" 
+                 class="afiche-img"
+                 onclick="window.open('assets/afiche.png', '_blank')">
+            <p class="afiche-caption">Haz clic en la imagen para verla más grande</p>
         </div>
     </section>
 
